@@ -1,0 +1,187 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="StyleOnRent.Site1" %>
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Style On Rent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #fff;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+
+        .navbar {
+            min-height: 65px;
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .search-box {
+            width: 180px;
+            border: none;
+            outline: none;
+            font-size: 12px;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #81243e;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 13px;
+        }
+
+        .nav-links a:hover {
+            color: #81243e;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 18px;
+        }
+
+        .login-icon {
+            background: #81243e;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        /* Common Section */
+
+        .section {
+            padding: 65px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 35px;
+            color: #333;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            padding: 13px 30px;
+            background: #800020;
+            color: white;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .primary-btn:hover {
+            background: #5f0018;
+        }
+
+        /* Footer */
+
+        .footer {
+            background: #292323;
+            color: white;
+            padding: 35px 5%;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        @media(max-width:700px) {
+            .navbar {
+                justify-content: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Navbar -->
+        <header class="navbar">
+
+            <div>
+                <input type="text" class="search-box"
+                    placeholder="⌕ Search our collection..." />
+            </div>
+
+            <a href="Default.aspx" class="logo">
+                Style On Rent
+            </a>
+
+            <nav class="nav-links">
+                <a href="Default.aspx#collections">Collections</a>
+                <a href="Default.aspx#trending">Designers</a>
+                <a href="AboutUs.aspx">About Us</a>
+                <a href="Default.aspx#offers">Offers</a>
+            </nav>
+
+            <div class="nav-icons">
+                <a href="Login.aspx" title="Wishlist">♡</a>
+                <a href="Login.aspx" title="Notifications">♧</a>
+                <a href="Login.aspx" title="Cart">♧</a>
+                <a href="Login.aspx" class="login-icon" title="Login">♟</a>
+            </div>
+
+        </header>
+
+        <!-- Page Content -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Style On Rent. All Rights Reserved.</p>
+            <p>Rent your style, express yourself.</p>
+        </footer>
+
+    </form>
+</body>
+</html>
